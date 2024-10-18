@@ -85,29 +85,43 @@ body {
   transition: border-radius 0.5s ease;
 }
 
-
 .circle {
-    border-radius: 50%;
-    background-color: #e2c044;
-  }
-  
-  .triangle {
-    width: 0;
-    height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 260px solid #f56342;
-    position: relative;
-  }
-  
-  .triangle p {
-    position: absolute;
-    top: 115px;
-    width: 200px;
-    text-align: bottom;
-    transform: rotate(-30deg);
-  }
-  
-  .square {
-    background-color: #007f5f;
-  }
+  border-radius: 50%;
+  background-color: #e2c044;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 260px solid #f56342;
+  position: relative;
+}
+
+.triangle p {
+  position: absolute;
+  top: 115px;
+  width: 200px;
+  text-align: bottom;
+  transform: rotate(-30deg);
+}
+
+.square {
+  background-color: #007f5f;
+}
+
+.wave-text {
+  font-size: 1.5rem;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.wave-text span {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  animation: wave 1.5s infinite ease-in-out;
+}
