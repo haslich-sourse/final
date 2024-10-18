@@ -1,3 +1,13 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+
 /* Бургер-меню активное состояние */
 .menu.active {
     display: block;
@@ -55,3 +65,48 @@
     display: block;
   }
   
+
+  
+/* Заголовки и блоки */
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+}
+
+.experience {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.experience-block {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.experience-block p {
+    font-size: 1rem;
+}
+
+/* Анимации */
+.experience-block:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
