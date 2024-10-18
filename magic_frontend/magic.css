@@ -155,8 +155,8 @@ body {
 
 .square {
   position: relative;
-  width: 365px;
-  height: 365px;
+  width: 50px;
+  height: 50px;
   background-color: #3498db;
   cursor: pointer;
   transition: transform 0.2s;
@@ -165,3 +165,32 @@ body {
 .square:hover {
   transform: scale(1.2);
 }
+
+
+.game-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#game-area {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background-color: #f0f0f0;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+}
+
+#start-btn {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#start-btn:hover {
+    background-color: #27ae60;
+}
+

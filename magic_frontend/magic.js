@@ -109,3 +109,75 @@ window.addEventListener('resize', () => {
 resizeCanvas();
 createStars();
 drawStars();
+
+
+
+const gameArea = document.getElementById('game-area');
+const scoreDisplay = document.getElementById('score');
+const startBtn = document.getElementById('start-btn');
+
+let score = 0;
+let gameInProgress = false;
+
+function startGame() {
+    score = 0;
+    scoreDisplay.textContent = score;
+    gameInProgress = true;
+    startBtn.disabled = true;
+
+    let gameDuration = 10000; // Игра длится 10 секунд
+    let squareInterval = setInterval(createSquare, 800); // Создавать новый квадрат каждые 0.8 секунд
+
+    // Закончить игру через 10 секунд
+    setTimeout(() => {
+        clearInterval(squareInterval);
+        gameInProgress = false;
+        startBtn.disabled = false;
+        alert(`Игра окончена! Ваш результат: ${score} очков.`);
+    }, gameDuration);
+}
+
+function createSquare() {
+    if (!gameInProgress) return;
+
+    const square = document.createElement('div');
+    square.classList.add('square');
+
+    square.style.top = `${Math.random() * (gameArea.clientHeight - 50)}px`;
+    square.style.left = `${Math.random() * (gameArea.clientWidth - 50)}px`;
+
+    square.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+
+    gameArea.appendChild(square);
+
+    // Добавим движение к квадрату
+    const moveX = Math.random() > 0.5 ? 1 : -1;
+    const moveY = Math.random() > 0.5 ? 1 : -1;
+    function moveSquare() {
+        if (!gameInProgress) return;
+
+        const currentTop = parseFloat(square.style.top);
+        const currentLeft = parseFloat(square.style.left);
+
+        // Обновляем позицию
+        square.style.top = `${currentTop + moveY * 2}px`;
+        square.style.left = `${currentLeft + moveX * 2}px`;
+
+        requestAnimationFrame(moveSquare);
+    }
+
+    moveSquare();
+
+    square.addEventListener('click', () => {
+        score++;
+        scoreDisplay.textContent = score;
+        square.remove();
+    });
+
+    setTimeout(() => {
+        square.remove();
+    }, 1500);
+}
+
+// Запуск игры при нажатии на кнопку
+startBtn.addEventListener('click', startGame);
