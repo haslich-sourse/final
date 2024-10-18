@@ -44,3 +44,38 @@ document.querySelector('.triangle').addEventListener('click', function () {
         this.style.borderRadius = '50%'; // Квадрат превращается в круг
     }
 });
+// создать canvas И установить размеры
+
+
+const canvas = document.createElement('canvas');
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext('2d');
+
+// Функция для установки размера canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+
+canvas.style.position = 'absolute';
+canvas.style.top = '0';
+canvas.style.left = '0';
+canvas.style.zIndex = '-1'; // Задаем canvas позицию на заднем плане
+
+const stars = [];
+
+
+// Функция для создания звезд
+function createStars() {
+    stars.length = 0; // Очищаем массив звезд при изменении размера
+    for (let i = 0; i < 100; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 5,
+            speed: Math.random() * 0.5 + 0.5
+        });
+    }
+}
