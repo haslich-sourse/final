@@ -79,3 +79,33 @@ function createStars() {
         });
     }
 }
+
+function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+            star.y = 0;
+        }
+    });
+
+    requestAnimationFrame(drawStars);
+}
+
+
+// Слушаем событие изменения размера окна и обновляем canvas и звезды
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    createStars();
+});
+
+// Инициализация размеров и звезд
+resizeCanvas();
+createStars();
+drawStars();
