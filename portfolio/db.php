@@ -4,7 +4,7 @@
 $host = 'localhost';    // хост базы данных
 $db = 'form_data';      // имя базы данных
 $user = 'root';         // имя пользователя
-$pass = '135phpmyadmin315';             // пароль
+$pass = '';             // пароль
 
 try {
     // Создаем объект PDO
