@@ -42,3 +42,14 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         event.preventDefault();
     }
 });
+
+// Hover effect on projects
+document.querySelectorAll('.project').forEach((project) => {
+    project.addEventListener('mouseover', function () {
+        this.style.backgroundColor = '#f9f9f9';
+    });
+
+    project.addEventListener('mouseout', function () {
+        this.style.backgroundColor = '#fff';
+    });
+});
