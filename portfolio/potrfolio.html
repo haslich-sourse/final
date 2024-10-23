@@ -35,6 +35,7 @@
         программирование и увлекаюсь дизайном и музыкой.
       </p>
     </section>
+
     <!-- Проекты -->
     <section id="projects">
       <h2>Проекты</h2>
@@ -59,6 +60,7 @@
         <p>Вклад: Полная разработка платформы.</p>
       </div>
     </section>
+
     <!-- Навыки -->
     <section id="skills">
       <h2>Навыки</h2>
@@ -71,6 +73,7 @@
         <li>Английский язык - B2</li>
       </ul>
     </section>
+
     <!-- Отзывы -->
     <section id="reviews">
       <h2>Отзывы</h2>
@@ -80,18 +83,22 @@
       </p>
       <p>– ООО "Основание"</p>
     </section>
+
     <!-- Контакты -->
     <section id="contacts">
       <h2>Контакты</h2>
-      <form action="submit.php" method="POST">
+      <form id="contactForm" action="submit.php" method="POST">
         <label for="name">Имя:</label>
         <input type="text" id="name" name="name" required />
+        <span class="error" id="nameError"></span>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
+        <span class="error" id="emailError"></span>
 
         <label for="message">Сообщение:</label>
         <textarea id="message" name="message" required></textarea>
+        <span class="error" id="messageError"></span>
 
         <button type="submit">Отправить</button>
       </form>
